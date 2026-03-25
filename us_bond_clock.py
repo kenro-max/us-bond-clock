@@ -1,9 +1,11 @@
-# US Bond Clock
+import streamlit as st
 
-import datetime
+# Function to display current time
+def display_time():
+    now = datetime.now(timezone.utc)
+    st.write('Current Time (UTC): ', now.strftime('%Y-%m-%d %H:%M:%S'))
 
-# Get current UTC date and time
-current_time = datetime.datetime.utcnow()
-formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')
-
-print(f'Current Date and Time (UTC - YYYY-MM-DD HH:MM:SS formatted): {formatted_time}')
+# Main function
+if __name__ == '__main__':
+    st.title('US Bond Clock')
+    display_time()
